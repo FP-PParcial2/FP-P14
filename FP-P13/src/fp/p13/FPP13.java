@@ -16,21 +16,20 @@ public class FPP13 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int [] vect=new int [30];
-        vect=PedirNum(vect);
-        
-    }
-    public static int[] PedirNum(int[] v){
+int []mat = new int[30];
+int p,mp;
+mat=Datos(mat);
+p=promedio(mat);
+ArribaPromedio(mat,p);
+}
+public static int[] Datos(int[] v){
 Scanner entrada = new Scanner(System.in);
 for(int i=0;i<v.length;i++){
 System.out.print("Introduce un numero para la posicion ["+ (i+1) +"] :");
 v[i]=entrada.nextInt();
-// Random ran = new Random(); //autofill
-// v[i]=ran.nextInt(100+1); //autofill
 }
 return v;}
-public static int promedioVector(int[] v){
+public static int promedio(int[] v){
 int a=0,p=0;
 for (int i=0; i<v.length; i++){
 a=v[i]+a;
@@ -39,17 +38,15 @@ p++;
 System.out.println("El promedio de los numeros en el arreglo es: "+(a/p));
 return (a/p);
 }
-public static void sobrePromedio(int[] v,int media){
-int C=0;
+public static void ArribaPromedio(int[] v,int prom){
+int c=0;
 for(int i=0;i<v.length;i++){
-if(v[i]>media){
-C++;
+if(v[i]>prom){
+c++;
 }
 }
-System.out.println("La cantidad de numeros sobre el promedio es: "+C);
-System.out.println("La cantidad de numeros debajo del promedio es:"+(v.length-C));
-        }
+System.out.println("La cantidad de numeros sobre el promedio es: "+c);
+System.out.println("La cantidad de numeros debajo del promedio es: "+(v.length-c));
 }
 
-        
-  
+}
